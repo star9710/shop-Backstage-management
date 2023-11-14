@@ -1,13 +1,11 @@
 <script setup>
-import Login from "./components/login.vue";
-// import TheWelcome from './components/TheWelcome.vue'
+import Login from './components/login.vue'
+import register from './components/register.vue'
 </script>
 
 <template>
   <div id="app">
-    <!-- <Login /> -->
-    <login></login>
-    <!-- <TheWelcome /> -->
+    <Login  />
   </div>
 </template>
 
