@@ -70,20 +70,20 @@ padding: 10px;
   cursor:default;
 
 }
-/* .forgetPsw>span:hover{
-  color: #409EFF;
-  cursor:default;
-} */
+
 
 @media screen and (max-width: 440px) {
   .loginBox {
   margin: 0 auto;
   border-radius:10px;
   box-shadow:1px 1px 10px #b8b8b8;
-  padding: 20px;
+  padding: 10px;
   border-top: 10px solid #409EFF;
   width: 320px;
   margin: 0 auto;
+}
+.buttonBox>div {
+padding: 1px;
 }
 }
 </style>
