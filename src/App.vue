@@ -1,12 +1,13 @@
 <script setup>
-import Login from './components/login.vue'
+import Login from "./components/login.vue";
 // import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
   <div id="app">
-    <Login  />
-      <!-- <TheWelcome /> -->
+    <!-- <Login /> -->
+    <login></login>
+    <!-- <TheWelcome /> -->
   </div>
 </template>
 
