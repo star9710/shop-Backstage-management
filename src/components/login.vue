@@ -1,17 +1,26 @@
 <script >
 export default {
-  data() {
-    return {
-      input: '',
-      inputPassword:''
+    data() {
+        return {
+            showLogin:true, // 根据这个条件来决定是否显示登录框
+            input: '',
+            inputPassword: ''
+        };
+    },
+    methods: {
+    login() {
+      // 处理登录逻辑
+    },
+    register(){
+      // 注册逻辑
     }
-  }
+  },
+    // components: { router }
 }
 </script>
 
 <template>
-  <div class="login">
-    
+  <div class="login" >
     <div class="loginBox" >
       <div class="pageName"><a href="#">登录</a></div>
       <div class="userNameBox">
@@ -22,8 +31,10 @@ export default {
       </div>
       <div class="buttonBox">
         <el-row>
-          <el-button type="primary" round>登录</el-button>
-          <el-button type="primary" round>注册</el-button>
+          <el-button type="primary" @click="login" round>登录</el-button>
+            <router-link to="/register">
+              <el-button type="primary" @click="register" round>注册</el-button>
+            </router-link>
         </el-row>
         <div class="forgetPsw" ><el-button type="text">忘记密码</el-button></div>
       </div>
@@ -57,12 +68,11 @@ export default {
 .buttonBox {
   text-align: center;
 }
-.buttonBox>div {
-padding: 10px;
-}
-.el-row>button {
+
+.el-button {
   min-width: 100px;
   letter-spacing:5px;
+  margin: 10px;
 }
 .forgetPsw>span {
   font-size: 14px;

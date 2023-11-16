@@ -1,13 +1,17 @@
-<script setup>
-import Login from './components/login.vue'
-import register from './components/register.vue'
-</script>
-
 <template>
   <div id="app">
-    <Login  />
+    <router-view></router-view>
   </div>
 </template>
 
-<style>
+<script >
+export default {
+  name: 'App',
+  components: {
+
+  }
+}
+</script>
+
+
 </style>

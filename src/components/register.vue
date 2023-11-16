@@ -4,7 +4,7 @@ export default {
     return {
       input: '',
       inputPassword:''
-    }
+    };
   }
 }
 </script>
@@ -27,7 +27,9 @@ export default {
         <el-row>
           <el-button type="primary" round>注册</el-button>
         </el-row>
-        <div class="forgetPsw" ><el-button type="text">已有账号？去登录</el-button></div>
+        <router-link to="/login">
+          <div class="forgetPsw" ><el-button type="text">已有账号？去登录</el-button></div>
+        </router-link>
       </div>
     </div>
   </div>
