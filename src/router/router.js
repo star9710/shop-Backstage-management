@@ -8,6 +8,7 @@ Vue.use(VueRouter)
 import register from '../components/register.vue'//导入组件
 import login from '../components/login.vue'//导入组件
 import Home from '../views/home.vue'//导入组件
+import PageTop from '../components/pageTop.vue'//导入组件
 
 
 // 2. 定义路由
@@ -16,7 +17,7 @@ import Home from '../views/home.vue'//导入组件
 const routes = [
   {
     path: '/',          // 路径
-    redirect: '/login'  // 重定向
+    redirect: '/login'  // 重定向   此处作用是将首页设置为登录页面
   },
   {
     path: '/register',// 路径
@@ -29,6 +30,10 @@ const routes = [
   {
     path:'/home',
     component:Home
+  },
+  {
+    path:'/pagetop',
+    component:PageTop
   }
   // 可以根据需要添加更多路由
 ]
