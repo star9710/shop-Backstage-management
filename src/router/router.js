@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 // 1. 定义 (路由) 组件。可以从其他文件 import 进来
 import register from '../components/register.vue'//导入组件
 import login from '../components/login.vue'//导入组件
-import Home from '../views/home.vue'//导入组件
+import Home from '../components/home.vue'//导入组件
 import PageTop from '../components/pageTop.vue'//导入组件
 
 
@@ -17,7 +17,7 @@ import PageTop from '../components/pageTop.vue'//导入组件
 const routes = [
   {
     path: '/',          // 路径
-    redirect: '/login'  // 重定向   此处作用是将首页设置为登录页面
+    redirect: '/home'  // 重定向   此处作用是将首页设置为登录页面
   },
   {
     path: '/register',// 路径

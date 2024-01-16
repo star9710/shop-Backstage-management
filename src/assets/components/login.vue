@@ -1,5 +1,8 @@
 <template>
   <div class="login">
+    <div id="reminder" class="reminder">
+      <span>账户或密码输入错误</span>
+    </div>
     <div class="loginBox">
       <div class="pageName"><a href="#">登录</a></div>
       <el-form :model="ruleForm" ref="ruleForm">
@@ -19,6 +22,7 @@
           </router-link>
         </el-row>
         <div class="forgetPsw"><el-button type="text">忘记密码</el-button></div>
+
       </div>
     </div>
   </div>
@@ -33,13 +37,13 @@ export default {
         username: "",
         password: "",
       },
-      
       loading: false, // 是否显示加载动画
     };
   },
   methods: {
     login(formName) {
       console.log("你点击“登录”按钮了");
+
       // 处理登录逻辑:
       this.$refs[formName].validate((valid) => {// 通过 $refs 获取表单引用并调用 validate 方法
         // 点击登录后，让登录按钮开始转圈圈（展示加载动画）
@@ -56,22 +60,26 @@ export default {
               'Content-Type': 'application/x-www-form-urlencoded',
             },
           }).then((res) => { // 当收到后端的响应时执行该括号内的代码，res 为响应信息，也就是后端返回的信息
-            if (res.data.code === "0") {  // 当响应的编码为 0 时，说明登录成功
+            if (res.data === 1) {  // 当响应的编码为 0 时，说明登录成功
+              console.log("登录成功");
               // 将用户信息存储到sessionStorage中
               sessionStorage.setItem("userInfo", JSON.stringify(res.data.data));
               // 跳转页面到首页
-              this.$router.push('../views/home');
-              // 显示后端响应的成功信息
-              this.$message({
-                message: res.data.msg,
-                type: "success",
-              });
+              // this.$router.push('./views/home.vue');
+              this.$router.push('./home');
+
+              // 将用户名存储到state数据中
+              // this.$store.dispatch('asyncUpdateUser',{name:this.ruleForm.username})
+
+
+          
             } else {  // 当响应的编码不为 0 时，说明登录失败
-              // 显示后端响应的失败信息
-              this.$message({
-                message: res.data.msg,
-                type: "warning",
-              });
+              console.log("账户或密码输入错误");
+              document.getElementById("reminder").style.display = "inline";
+              setTimeout(
+                function() { 
+                  document.getElementById("reminder").style.display = "none";
+                }, 3000); 
             }
             // 不管响应成功还是失败，收到后端响应的消息后就不再让登录按钮显示加载动画了
             that.loading = false;
@@ -153,5 +161,24 @@ form>div {
   .buttonBox>div {
     padding: 1px;
   }
+}
+
+.reminder {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%, 5%);
+  text-align: center;
+  color: rgb(255, 95, 95);
+  border: 1px solid rgb(255, 95, 95);
+  padding: 10px 15px;
+  background-color: #fff7f7;
+  margin: 0 auto;
+  border-radius: 5px;
+  display: none;
+}
+
+.reminder>span {
+  margin: 20px;
 }
 </style>
