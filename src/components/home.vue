@@ -7,7 +7,7 @@
           <el-menu-item index="1-1">仪表盘</el-menu-item>
         </el-submenu>
         <el-submenu index="2">
-    <template slot="t      itle"><i class="el-icon-menu"></i>商品</template>
+    <template slot="title"><i class="el-icon-menu"></i>商品</template>
           <el-menu-item index="2-1">商品列表</el-menu-item>
           <el-menu-item index="2-2">添加商品</el-menu-item>
           <el-menu-item index="2-3">商品分类</el-menu-item>
