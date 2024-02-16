@@ -8,6 +8,9 @@ import axios from 'axios'//导入插件,全局引入后就不需要在各个组�
 import VueAxios from 'vue-axios'//导入插件
 // import Vuex from 'Vuex'
 // import Store from './store'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap.js'
+
 
 
 
