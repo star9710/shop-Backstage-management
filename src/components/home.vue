@@ -7,7 +7,7 @@
           <el-menu-item index="1-1">仪表盘</el-menu-item>
         </el-submenu>
         <el-submenu index="2">
-    <template slot="title"><i class="el-icon-menu"></i>商品</template>
+          <template slot="title"><i class="el-icon-menu"></i>商品</template>
           <el-menu-item index="2-1">商品列表</el-menu-item>
           <el-menu-item index="2-2">添加商品</el-menu-item>
           <el-menu-item index="2-3">商品分类</el-menu-item>
@@ -43,17 +43,16 @@
 
     <el-container>
       <el-header>
+        <!-- 点击收缩 -->
         <i class="el-icon-s-fold" @click="toggleWidth" style=""></i>
         <el-dropdown>
-          <i class="el-icon-setting" style="margin-right: 15px"></i>
-          <el-dropdown-menu slot="dropdown" >
-            <el-dropdown-item>查看</el-dropdown-item>
-            <el-dropdown-item>新增</el-dropdown-item>
-            <el-dropdown-item>删除</el-dropdown-item>
-          </el-dropdown-menu>
+          <!-- <i class="el-icon-setting" style="margin-right: 15px"></i> -->
           <span>王小虎</span>
+          <span class="avatar">
+            <img src="../assets/head.jpg" alt="">
+          </span>
         </el-dropdown>
-        
+
       </el-header>
 
       <el-main>
@@ -78,34 +77,37 @@ export default {
   },
   methods: {
     toggleWidth() {
-    // 点击按钮时切换导航栏宽度
-    console.log("点击了");
-    // 获取按钮元素
-    var buttonElement = document.getElementById('el-aside');
-    // 获取按钮当前的宽度
-    var currentWidth = buttonElement.style.width;
-    console.log(currentWidth);
+      // 点击按钮时切换导航栏宽度
+      console.log("点击了");
+      // 获取按钮元素
+      var buttonElement = document.getElementById('el-aside');
+      // 获取按钮当前的宽度
+      var currentWidth = buttonElement.style.width;
+      console.log(currentWidth);
 
 
 
 
-    if (currentWidth === '200px') {
+      if (currentWidth === '200px') {
         // 修改样式宽度
         buttonElement.style.width = '60px';
-    } else {
+      } else {
         // 修改样式宽度
         buttonElement.style.width = '200px';
+      }
     }
-}
   }
 };
 </script>
 
 <style scoped>
 .el-header {
+  display: flex;
+  justify-content: space-between;
   background-color: #FFFFFF;
   color: #333;
   line-height: 60px;
+  border-bottom: 1px solid #dfdfdf;
 }
 
 .el-aside {
@@ -124,10 +126,28 @@ export default {
   font-size: 20px !important;
 }
 
-.el-icon-s-fold{
-  line-height:inherit !important;
+.el-icon-s-fold {
+  line-height: inherit !important;
+  height: 100%;
 }
-.el-dropdown{
-  float: right;
+
+.el-dropdown {
+  display: flex;
+  width: 120px;
+  height: 100%;
+  white-space: nowrap;
+}
+
+
+
+.el-main {
+  background-color: #fff;
+}
+
+.avatar>img {
+  width: 40px;
+  border-radius: 50%;
+  margin: 10px;
+
 }
 </style>
