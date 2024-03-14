@@ -47,10 +47,11 @@
         <i class="el-icon-s-fold" @click="toggleWidth" style=""></i>
         <el-dropdown>
           <!-- <i class="el-icon-setting" style="margin-right: 15px"></i> -->
-          <span>王小虎</span>
+          <span><i class="el-icon-message-solid"></i></span>
           <span class="avatar">
             <img src="../assets/head.jpg" alt="">
           </span>
+          <span>翠花</span>
         </el-dropdown>
 
       </el-header>
@@ -149,5 +150,8 @@ export default {
   border-radius: 50%;
   margin: 10px;
 
+}
+.el-icon-message-solid{
+  font-size: 20px;
 }
 </style>
