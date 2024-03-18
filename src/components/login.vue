@@ -65,8 +65,8 @@ export default {
               // 将用户信息存储到sessionStorage中
               sessionStorage.setItem("userInfo", JSON.stringify(res.data.data));
               // 跳转页面到首页
-              // this.$router.push('./views/home.vue');
-              this.$router.push('./home');
+              this.$router.push('../views/home.vue');
+              // this.$router.push('./home');
 
               // 将用户名存储到state数据中
               // this.$store.dispatch('asyncUpdateUser',{name:this.ruleForm.username})
