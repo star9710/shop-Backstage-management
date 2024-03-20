@@ -58,6 +58,7 @@
 
       <el-main>
         <!-- 内容区域 -->
+        <main></main>
       </el-main>
 
     </el-container>

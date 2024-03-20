@@ -17,7 +17,7 @@ import PageTop from '../components/pageTop.vue'//导入组件
 const routes = [
   {
     path: '/',          // 路径
-    redirect: '/login'  // 重定向   此处作用是将首页设置为登录页面
+    redirect: '/home'  // 重定向   此处作用是将首页设置为登录页面
   },
   {
     path: '/register',// 路径
