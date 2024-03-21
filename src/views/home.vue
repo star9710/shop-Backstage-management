@@ -56,16 +56,14 @@
 
       </el-header>
 
-      <el-main>
-        <!-- 内容区域 -->
-        <main></main>
-      </el-main>
+      <Main id="bar1" height="300px" width="100%"></Main>
 
     </el-container>
   </el-container>
 </template>
 
 <script>
+import Main from '@/views/main.vue'
 export default {
   data() {
     const item = {

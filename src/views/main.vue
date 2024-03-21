@@ -14,3 +14,8 @@
         <div class="containersFour"></div>
     </div>
 </template>
+<style>
+.main{
+    width: 100%;
+}
+</style>
